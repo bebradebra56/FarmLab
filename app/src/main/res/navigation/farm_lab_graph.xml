@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/farm_lab_graph"
+    app:startDestination="@id/farmLabLoadFragment">
+
+    <fragment
+        android:id="@+id/farmLabLoadFragment"
+        android:name="com.farmlab.labfarmis.ut.presentation.ui.load.FarmLabLoadFragment"
+        android:label="FarmLabLoadFragment" >
+        <action
+            android:id="@+id/action_farmLabLoadFragment_to_farmLabV"
+            app:destination="@id/farmLabV"
+            app:popUpTo="@id/farm_lab_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/farmLabV"
+        android:name="com.farmlab.labfarmis.ut.presentation.ui.view.FarmLabV"
+        android:label="FarmLabV" />
+</navigation>

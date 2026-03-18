@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "637587917102",
+    "project_id": "farmlab-61c5b",
+    "storage_bucket": "farmlab-61c5b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:637587917102:android:46f277e2d0768fcd17d2bf",
+        "android_client_info": {
+          "package_name": "com.farmlab.labfarmis"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBXJipKkk9qxTRuMef-1_NdMLjqPyoOHKE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
