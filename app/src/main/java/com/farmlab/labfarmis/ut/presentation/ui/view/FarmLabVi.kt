@@ -80,16 +80,22 @@ class FarmLabVi(
 
             override fun onPageFinished(view: WebView?, url: String?) {
                 CookieManager.getInstance().flush()
-                if (url?.contains("ninecasino") == true) {
-                    FarmLabApplication.farmLabInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
-                    Log.d(FarmLabApplication.FARM_LAB_MAIN_TAG, "onPageFinished : ${FarmLabApplication.farmLabInputMode}")
-                    farmLabWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
-                    farmLabEnableStableInputScroll()
-                } else {
-                    FarmLabApplication.farmLabInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
-                    Log.d(FarmLabApplication.FARM_LAB_MAIN_TAG, "onPageFinished : ${FarmLabApplication.farmLabInputMode}")
-                    farmLabWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
-                }
+
+                FarmLabApplication.farmLabInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
+                Log.d(FarmLabApplication.FARM_LAB_MAIN_TAG, "onPageFinished : ${FarmLabApplication.farmLabInputMode}")
+                farmLabWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+                farmLabEnableStableInputScroll()
+
+//                if (url?.contains("ninecasino") == true || url?.contains("winairlines") == true) {
+//                    FarmLabApplication.farmLabInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN
+//                    Log.d(FarmLabApplication.FARM_LAB_MAIN_TAG, "onPageFinished : ${FarmLabApplication.farmLabInputMode}")
+//                    farmLabWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN);
+//                    farmLabEnableStableInputScroll()
+//                } else {
+//                    FarmLabApplication.farmLabInputMode = WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE
+//                    Log.d(FarmLabApplication.FARM_LAB_MAIN_TAG, "onPageFinished : ${FarmLabApplication.farmLabInputMode}")
+//                    farmLabWindow.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+//                }
             }
 
 
@@ -252,7 +258,7 @@ class FarmLabVi(
                 document.documentElement.style.transition = 'transform 0.2s ease-out';
                 document.documentElement.style.transform = '';
                 activeTransform = 0;
-                
+
                 setTimeout(() => {
                     document.documentElement.style.transition = '';
                 }, 200);
@@ -261,9 +267,6 @@ class FarmLabVi(
             // Расписание с несколькими попытками для надежности
             function scheduleEnsureVisible(el) {
                 ensureInputVisible(el);
-                setTimeout(() => ensureInputVisible(el), 100);
-                setTimeout(() => ensureInputVisible(el), 250);
-                setTimeout(() => ensureInputVisible(el), 400);
             }
 
             // События
